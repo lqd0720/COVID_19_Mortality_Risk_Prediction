@@ -1,0 +1,735 @@
+================================================================================
+COVID-19 DEATH PREDICTION - COST-SENSITIVE LEARNING
+Training started at: 2025-09-27 17:15:05
+Cost ratio (Death:No Death penalty): 10:1
+Optimization metric: F2-score (emphasizes recall)
+Output being saved to: training_output_20250927_171505.txt
+================================================================================
+Loading data...
+Original data shape: (8405079, 6)
+Missing values per column:
+sex            93383
+age_group      32041
+race         3382702
+hosp         4363752
+icu          7464517
+death        4530689
+dtype: int64
+After removing unknown death status: (3874390, 6)
+After removing rows with missing features: (591024, 6)
+After feature engineering: (591024, 10)
+Final feature matrix shape: (591024, 19)
+Features: ['age_numeric', 'high_risk_age', 'very_high_risk_age', 'hosp_icu_risk', 'age_group_encoded', 'sex_Female', 'sex_Male', 'sex_Other', 'race_American_Indian_Alaska_Native_Non_Hispanic', 'race_Asian_Non_Hispanic', 'race_Black_Non_Hispanic', 'race_Hispanic_Latino', 'race_Multiple_Other_Non_Hispanic', 'race_Native_Hawaiian_Other_Pacific_Islander_Non_Hispanic', 'race_White_Non_Hispanic', 'hosp_yes', 'hosp_unknown', 'icu_yes', 'icu_unknown']
+
+Starting Optuna optimization with 100 trials...
+Optimizing for F2-score (prioritizes recall over precision)
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:15:42,937][0m Trial 0 finished with value: 0.5448847750486351 and parameters: {'num_leaves': 29, 'learning_rate': 0.2156754086022111, 'feature_fraction': 0.46476448975369683, 'bagging_fraction': 0.6021071968214556, 'bagging_freq': 9, 'min_child_samples': 70, 'reg_alpha': 6.416505858350781, 'reg_lambda': 5.839295724787556, 'max_depth': 9, 'min_split_gain': 0.018994007654175582}. Best is trial 0 with value: 0.5448847750486351.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:16:08,159][0m Trial 1 finished with value: 0.5454315795061135 and parameters: {'num_leaves': 16, 'learning_rate': 0.19058510197873801, 'feature_fraction': 0.8195129579768379, 'bagging_fraction': 0.7107963322283846, 'bagging_freq': 1, 'min_child_samples': 70, 'reg_alpha': 5.627214703943753, 'reg_lambda': 9.040381676879939, 'max_depth': 9, 'min_split_gain': 0.1731112587259439}. Best is trial 1 with value: 0.5454315795061135.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:16:32,760][0m Trial 2 finished with value: 0.5486750532459056 and parameters: {'num_leaves': 24, 'learning_rate': 0.09732952765076769, 'feature_fraction': 0.50471219645833, 'bagging_fraction': 0.6404060425143421, 'bagging_freq': 4, 'min_child_samples': 36, 'reg_alpha': 6.010879098077644, 'reg_lambda': 7.30564633138608, 'max_depth': 4, 'min_split_gain': 0.3849647434761114}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:17:16,437][0m Trial 3 finished with value: 0.5456842662716109 and parameters: {'num_leaves': 54, 'learning_rate': 0.06033079198251864, 'feature_fraction': 0.7598675742726296, 'bagging_fraction': 0.493748136751448, 'bagging_freq': 9, 'min_child_samples': 48, 'reg_alpha': 8.37784173878301, 'reg_lambda': 0.8293009528061068, 'max_depth': 8, 'min_split_gain': 0.693131531496471}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:18:08,043][0m Trial 4 finished with value: 0.5483975211176364 and parameters: {'num_leaves': 78, 'learning_rate': 0.010331644787956187, 'feature_fraction': 0.5393622881749035, 'bagging_fraction': 0.982987463941183, 'bagging_freq': 7, 'min_child_samples': 56, 'reg_alpha': 1.812720350951258, 'reg_lambda': 8.325742251727142, 'max_depth': 13, 'min_split_gain': 0.33504482600027174}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:18:28,054][0m Trial 5 finished with value: 0.5376483633729878 and parameters: {'num_leaves': 57, 'learning_rate': 0.017723852378506662, 'feature_fraction': 0.653730350581522, 'bagging_fraction': 0.40704028042439955, 'bagging_freq': 3, 'min_child_samples': 66, 'reg_alpha': 0.1273365731998799, 'reg_lambda': 6.199582929066899, 'max_depth': 3, 'min_split_gain': 0.917484105910058}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:19:23,921][0m Trial 6 finished with value: 0.5477060814030045 and parameters: {'num_leaves': 89, 'learning_rate': 0.06892989380866428, 'feature_fraction': 0.8689891199687952, 'bagging_fraction': 0.5664378910865578, 'bagging_freq': 3, 'min_child_samples': 14, 'reg_alpha': 9.720085721649662, 'reg_lambda': 9.985038078607761, 'max_depth': 11, 'min_split_gain': 0.293920817674172}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:19:39,373][0m Trial 7 finished with value: 0.5443841922573449 and parameters: {'num_leaves': 24, 'learning_rate': 0.28754670389387027, 'feature_fraction': 0.992113761173496, 'bagging_fraction': 0.8667608398659108, 'bagging_freq': 9, 'min_child_samples': 79, 'reg_alpha': 0.20723963369673193, 'reg_lambda': 2.5450078997932923, 'max_depth': 9, 'min_split_gain': 0.9418864059614089}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:20:14,759][0m Trial 8 finished with value: 0.5458283354726653 and parameters: {'num_leaves': 33, 'learning_rate': 0.053491317051638565, 'feature_fraction': 0.4784046763085014, 'bagging_fraction': 0.6003907642603369, 'bagging_freq': 4, 'min_child_samples': 29, 'reg_alpha': 8.03525919167322, 'reg_lambda': 1.4937155914529365, 'max_depth': 15, 'min_split_gain': 0.6497880368204646}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:20:48,999][0m Trial 9 finished with value: 0.545177189488034 and parameters: {'num_leaves': 91, 'learning_rate': 0.15004955094691216, 'feature_fraction': 0.9424530062694312, 'bagging_fraction': 0.7601678522980315, 'bagging_freq': 1, 'min_child_samples': 82, 'reg_alpha': 8.476335108092796, 'reg_lambda': 2.07590696441758, 'max_depth': 6, 'min_split_gain': 0.2386990068600039}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:21:10,482][0m Trial 10 finished with value: 0.5435080162179441 and parameters: {'num_leaves': 47, 'learning_rate': 0.03222997648487047, 'feature_fraction': 0.6304875016760567, 'bagging_fraction': 0.8395104360441891, 'bagging_freq': 6, 'min_child_samples': 99, 'reg_alpha': 4.0305810741575, 'reg_lambda': 4.091854022382728, 'max_depth': 3, 'min_split_gain': 0.5033593618726242}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:22:00,800][0m Trial 11 finished with value: 0.5486253838804792 and parameters: {'num_leaves': 73, 'learning_rate': 0.01118206683231472, 'feature_fraction': 0.5571421629414299, 'bagging_fraction': 0.9344605389611735, 'bagging_freq': 6, 'min_child_samples': 43, 'reg_alpha': 2.9885538471277258, 'reg_lambda': 8.069044689771522, 'max_depth': 13, 'min_split_gain': 0.39454704335887447}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:22:26,020][0m Trial 12 finished with value: 0.5479606773666843 and parameters: {'num_leaves': 71, 'learning_rate': 0.10970438738911108, 'feature_fraction': 0.4050207692974473, 'bagging_fraction': 0.9721799113429903, 'bagging_freq': 5, 'min_child_samples': 34, 'reg_alpha': 3.5301131391215286, 'reg_lambda': 7.404435651008444, 'max_depth': 6, 'min_split_gain': 0.4698891548354023}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:30:08,818][0m Trial 13 finished with value: 0.5472583688696521 and parameters: {'num_leaves': 66, 'learning_rate': 0.027797600452593472, 'feature_fraction': 0.5766752462965071, 'bagging_fraction': 0.8213764019327165, 'bagging_freq': 7, 'min_child_samples': 34, 'reg_alpha': 3.123480297306901, 'reg_lambda': 7.3687621490035315, 'max_depth': 12, 'min_split_gain': 0.49498369076235404}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:30:48,093][0m Trial 14 finished with value: 0.5472577713601241 and parameters: {'num_leaves': 42, 'learning_rate': 0.09720667140132937, 'feature_fraction': 0.5500254112443832, 'bagging_fraction': 0.6670638368742936, 'bagging_freq': 5, 'min_child_samples': 6, 'reg_alpha': 6.293665900274195, 'reg_lambda': 4.2591290815239375, 'max_depth': 14, 'min_split_gain': 0.6588175334498001}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:31:13,111][0m Trial 15 finished with value: 0.5417782762850708 and parameters: {'num_leaves': 10, 'learning_rate': 0.010085565144122297, 'feature_fraction': 0.7118878964770887, 'bagging_fraction': 0.907692041365301, 'bagging_freq': 7, 'min_child_samples': 45, 'reg_alpha': 1.9119636219260199, 'reg_lambda': 6.852567162515612, 'max_depth': 6, 'min_split_gain': 0.4072839729709208}. Best is trial 2 with value: 0.5486750532459056.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:31:54,801][0m Trial 16 finished with value: 0.5490734638603973 and parameters: {'num_leaves': 78, 'learning_rate': 0.03731694599963956, 'feature_fraction': 0.40762978483092416, 'bagging_fraction': 0.7354028249572118, 'bagging_freq': 3, 'min_child_samples': 22, 'reg_alpha': 4.708425306862529, 'reg_lambda': 8.2011451076933, 'max_depth': 11, 'min_split_gain': 0.14613621524263065}. Best is trial 16 with value: 0.5490734638603973.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:32:37,624][0m Trial 17 finished with value: 0.5491361020487556 and parameters: {'num_leaves': 98, 'learning_rate': 0.04047946373451311, 'feature_fraction': 0.4250877904124877, 'bagging_fraction': 0.7303984002646176, 'bagging_freq': 3, 'min_child_samples': 19, 'reg_alpha': 5.092595414050808, 'reg_lambda': 4.990081370668822, 'max_depth': 11, 'min_split_gain': 0.07426435699182843}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:33:23,082][0m Trial 18 finished with value: 0.5470097616953014 and parameters: {'num_leaves': 100, 'learning_rate': 0.03626803657052854, 'feature_fraction': 0.4356350377459112, 'bagging_fraction': 0.7501066776603497, 'bagging_freq': 2, 'min_child_samples': 20, 'reg_alpha': 4.640700859588101, 'reg_lambda': 3.319092211204635, 'max_depth': 11, 'min_split_gain': 0.008928582235760013}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:34:05,101][0m Trial 19 finished with value: 0.5479446818902345 and parameters: {'num_leaves': 83, 'learning_rate': 0.020434394664533225, 'feature_fraction': 0.4069917842001, 'bagging_fraction': 0.7718025911373244, 'bagging_freq': 2, 'min_child_samples': 21, 'reg_alpha': 7.294490190793477, 'reg_lambda': 5.381588043185403, 'max_depth': 11, 'min_split_gain': 0.10074490346590625}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:35:01,851][0m Trial 20 finished with value: 0.5481403783492105 and parameters: {'num_leaves': 96, 'learning_rate': 0.04440303696432824, 'feature_fraction': 0.6223528774619164, 'bagging_fraction': 0.5213918759394586, 'bagging_freq': 3, 'min_child_samples': 7, 'reg_alpha': 4.900081311693515, 'reg_lambda': 4.7211298525580085, 'max_depth': 10, 'min_split_gain': 0.14455251954379497}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:35:41,072][0m Trial 21 finished with value: 0.5459009784973754 and parameters: {'num_leaves': 62, 'learning_rate': 0.07998937546278742, 'feature_fraction': 0.49761241507721665, 'bagging_fraction': 0.6676060470092274, 'bagging_freq': 4, 'min_child_samples': 25, 'reg_alpha': 5.524856792276209, 'reg_lambda': 9.320898309092087, 'max_depth': 7, 'min_split_gain': 0.2197377775045918}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:36:06,562][0m Trial 22 finished with value: 0.5448223777166061 and parameters: {'num_leaves': 82, 'learning_rate': 0.022269079664404196, 'feature_fraction': 0.5027702189263867, 'bagging_fraction': 0.6886181427325738, 'bagging_freq': 4, 'min_child_samples': 37, 'reg_alpha': 6.706005496359304, 'reg_lambda': 6.314966550354054, 'max_depth': 4, 'min_split_gain': 0.09295813654505536}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:36:50,930][0m Trial 23 finished with value: 0.5475817669289477 and parameters: {'num_leaves': 91, 'learning_rate': 0.04463562577824612, 'feature_fraction': 0.4492445930664121, 'bagging_fraction': 0.627934582062123, 'bagging_freq': 2, 'min_child_samples': 16, 'reg_alpha': 4.373806293715562, 'reg_lambda': 8.607573888463786, 'max_depth': 12, 'min_split_gain': 0.2796332891002502}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:37:33,639][0m Trial 24 finished with value: 0.5454273605448339 and parameters: {'num_leaves': 43, 'learning_rate': 0.12131985526887427, 'feature_fraction': 0.5139936775585953, 'bagging_fraction': 0.7343912649374842, 'bagging_freq': 4, 'min_child_samples': 54, 'reg_alpha': 5.903940264620488, 'reg_lambda': 7.731680712030897, 'max_depth': 10, 'min_split_gain': 0.0757589107538631}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:38:03,832][0m Trial 25 finished with value: 0.548660526438093 and parameters: {'num_leaves': 86, 'learning_rate': 0.08157184807732974, 'feature_fraction': 0.4001060372528227, 'bagging_fraction': 0.7930539473885089, 'bagging_freq': 3, 'min_child_samples': 26, 'reg_alpha': 7.3382338966662966, 'reg_lambda': 6.71819879435845, 'max_depth': 5, 'min_split_gain': 0.1846126563632455}. Best is trial 17 with value: 0.5491361020487556.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:38:47,407][0m Trial 26 finished with value: 0.5496289963434994 and parameters: {'num_leaves': 75, 'learning_rate': 0.01510290758143695, 'feature_fraction': 0.5850638121278499, 'bagging_fraction': 0.6533680789680336, 'bagging_freq': 5, 'min_child_samples': 15, 'reg_alpha': 5.332109210015526, 'reg_lambda': 5.276089268635646, 'max_depth': 8, 'min_split_gain': 0.5677572556040569}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:39:37,397][0m Trial 27 finished with value: 0.5487572574108307 and parameters: {'num_leaves': 73, 'learning_rate': 0.01519397382266539, 'feature_fraction': 0.697791543687788, 'bagging_fraction': 0.7099022521329551, 'bagging_freq': 5, 'min_child_samples': 12, 'reg_alpha': 2.1205025370465016, 'reg_lambda': 3.3469273194267717, 'max_depth': 8, 'min_split_gain': 0.74891503061624}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:40:24,903][0m Trial 28 finished with value: 0.549220152014779 and parameters: {'num_leaves': 78, 'learning_rate': 0.026669595385093704, 'feature_fraction': 0.5814207776680025, 'bagging_fraction': 0.5500514739750756, 'bagging_freq': 6, 'min_child_samples': 5, 'reg_alpha': 5.1473287405939026, 'reg_lambda': 4.751306242422119, 'max_depth': 10, 'min_split_gain': 0.5689485812110316}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:41:12,534][0m Trial 29 finished with value: 0.5490280637430802 and parameters: {'num_leaves': 100, 'learning_rate': 0.014230543840526477, 'feature_fraction': 0.6797319872821909, 'bagging_fraction': 0.5605716935513777, 'bagging_freq': 8, 'min_child_samples': 6, 'reg_alpha': 5.2651252210705835, 'reg_lambda': 5.417027634257382, 'max_depth': 8, 'min_split_gain': 0.5405349100981566}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:42:22,033][0m Trial 30 finished with value: 0.5483389910318612 and parameters: {'num_leaves': 60, 'learning_rate': 0.025366664372205312, 'feature_fraction': 0.6004407151515744, 'bagging_fraction': 0.4174770082768454, 'bagging_freq': 10, 'min_child_samples': 13, 'reg_alpha': 3.8449822199295056, 'reg_lambda': 4.679051205430124, 'max_depth': 10, 'min_split_gain': 0.8144057923663252}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:43:02,374][0m Trial 31 finished with value: 0.5495719145782307 and parameters: {'num_leaves': 77, 'learning_rate': 0.03589546891954562, 'feature_fraction': 0.4488976907394452, 'bagging_fraction': 0.47145790303853496, 'bagging_freq': 6, 'min_child_samples': 20, 'reg_alpha': 5.020211720325191, 'reg_lambda': 5.725262383923839, 'max_depth': 12, 'min_split_gain': 0.5914511864768845}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:43:42,709][0m Trial 32 finished with value: 0.5485824387066808 and parameters: {'num_leaves': 80, 'learning_rate': 0.028245271649412207, 'feature_fraction': 0.4474344429764343, 'bagging_fraction': 0.5084376766942127, 'bagging_freq': 6, 'min_child_samples': 16, 'reg_alpha': 6.70009450078037, 'reg_lambda': 5.733641932781594, 'max_depth': 12, 'min_split_gain': 0.5839429435481625}. Best is trial 26 with value: 0.5496289963434994.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:44:31,813][0m Trial 33 finished with value: 0.5505787673251442 and parameters: {'num_leaves': 71, 'learning_rate': 0.018125252069259776, 'feature_fraction': 0.7506248822854404, 'bagging_fraction': 0.4613000061771009, 'bagging_freq': 8, 'min_child_samples': 29, 'reg_alpha': 5.159151555361755, 'reg_lambda': 3.6907108979718997, 'max_depth': 9, 'min_split_gain': 0.5846684853494766}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:45:19,107][0m Trial 34 finished with value: 0.5496816589379616 and parameters: {'num_leaves': 67, 'learning_rate': 0.013877154918043378, 'feature_fraction': 0.7669494109513579, 'bagging_fraction': 0.4685174292129888, 'bagging_freq': 8, 'min_child_samples': 28, 'reg_alpha': 5.680007262210017, 'reg_lambda': 3.427681911793267, 'max_depth': 9, 'min_split_gain': 0.6058083280776269}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:46:03,925][0m Trial 35 finished with value: 0.5475393720528838 and parameters: {'num_leaves': 67, 'learning_rate': 0.014817034283886664, 'feature_fraction': 0.8092767320864948, 'bagging_fraction': 0.465994893382322, 'bagging_freq': 8, 'min_child_samples': 30, 'reg_alpha': 5.820415445943291, 'reg_lambda': 3.512678566878568, 'max_depth': 8, 'min_split_gain': 0.7639465383095059}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:46:42,558][0m Trial 36 finished with value: 0.549029163456743 and parameters: {'num_leaves': 51, 'learning_rate': 0.012576142813330663, 'feature_fraction': 0.7703230714692744, 'bagging_fraction': 0.45749442664139556, 'bagging_freq': 8, 'min_child_samples': 39, 'reg_alpha': 7.32334243833485, 'reg_lambda': 2.7626156497951335, 'max_depth': 7, 'min_split_gain': 0.6311810188862479}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:47:27,873][0m Trial 37 finished with value: 0.5472514303241345 and parameters: {'num_leaves': 67, 'learning_rate': 0.01905639326087476, 'feature_fraction': 0.7294428475980557, 'bagging_fraction': 0.44654814840932205, 'bagging_freq': 10, 'min_child_samples': 50, 'reg_alpha': 6.338726983132704, 'reg_lambda': 3.9427907390758317, 'max_depth': 9, 'min_split_gain': 0.8574084046699304}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:48:10,341][0m Trial 38 finished with value: 0.5488227817202859 and parameters: {'num_leaves': 62, 'learning_rate': 0.015242116262957031, 'feature_fraction': 0.8517433189488569, 'bagging_fraction': 0.48543989746458527, 'bagging_freq': 7, 'min_child_samples': 30, 'reg_alpha': 4.337382047468036, 'reg_lambda': 0.04194087529969259, 'max_depth': 7, 'min_split_gain': 0.7195315946445183}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:48:59,844][0m Trial 39 finished with value: 0.5442209881338748 and parameters: {'num_leaves': 55, 'learning_rate': 0.017435730738705538, 'feature_fraction': 0.7642060252329235, 'bagging_fraction': 0.5277865555489177, 'bagging_freq': 9, 'min_child_samples': 41, 'reg_alpha': 3.1537531715337814, 'reg_lambda': 2.725255262698965, 'max_depth': 9, 'min_split_gain': 0.431680408390713}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:49:44,654][0m Trial 40 finished with value: 0.547879422098217 and parameters: {'num_leaves': 72, 'learning_rate': 0.022617291294695484, 'feature_fraction': 0.663696087435095, 'bagging_fraction': 0.5955307755901705, 'bagging_freq': 8, 'min_child_samples': 63, 'reg_alpha': 5.568451563214292, 'reg_lambda': 1.4474093785655042, 'max_depth': 8, 'min_split_gain': 0.6148943560219934}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:50:35,620][0m Trial 41 finished with value: 0.550129346379712 and parameters: {'num_leaves': 75, 'learning_rate': 0.017824036652090088, 'feature_fraction': 0.7937306532616769, 'bagging_fraction': 0.5496425680143789, 'bagging_freq': 6, 'min_child_samples': 13, 'reg_alpha': 5.116112788934805, 'reg_lambda': 6.016042289083115, 'max_depth': 9, 'min_split_gain': 0.5579451795563075}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:51:22,624][0m Trial 42 finished with value: 0.549669393275442 and parameters: {'num_leaves': 76, 'learning_rate': 0.012587351537092001, 'feature_fraction': 0.7965893670379149, 'bagging_fraction': 0.43178882377764005, 'bagging_freq': 7, 'min_child_samples': 11, 'reg_alpha': 5.97776675436904, 'reg_lambda': 6.163338109221252, 'max_depth': 9, 'min_split_gain': 0.536934662668106}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:52:08,960][0m Trial 43 finished with value: 0.5502557604113374 and parameters: {'num_leaves': 69, 'learning_rate': 0.012258934584423026, 'feature_fraction': 0.835034553749664, 'bagging_fraction': 0.42924881856964564, 'bagging_freq': 7, 'min_child_samples': 10, 'reg_alpha': 6.039330852058115, 'reg_lambda': 6.273239020445766, 'max_depth': 9, 'min_split_gain': 0.5375293112397361}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 17:53:06,040][0m Trial 44 finished with value: 0.5498659764301028 and parameters: {'num_leaves': 68, 'learning_rate': 0.012358832952480412, 'feature_fraction': 0.9034176440752765, 'bagging_fraction': 0.40310280855768377, 'bagging_freq': 7, 'min_child_samples': 10, 'reg_alpha': 6.950083934305873, 'reg_lambda': 6.514790764991808, 'max_depth': 9, 'min_split_gain': 0.33497648667152896}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:08:47,940][0m Trial 45 finished with value: 0.5494319655166353 and parameters: {'num_leaves': 69, 'learning_rate': 0.011932780642793189, 'feature_fraction': 0.8692900328892684, 'bagging_fraction': 0.40279762861948787, 'bagging_freq': 9, 'min_child_samples': 9, 'reg_alpha': 9.080874923529528, 'reg_lambda': 6.67386152366256, 'max_depth': 9, 'min_split_gain': 0.45444267151746925}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:12:28,706][0m Trial 46 finished with value: 0.5444223292889119 and parameters: {'num_leaves': 60, 'learning_rate': 0.017478625554684424, 'feature_fraction': 0.9153091311944196, 'bagging_fraction': 0.43764295410394005, 'bagging_freq': 8, 'min_child_samples': 27, 'reg_alpha': 7.8506098672726745, 'reg_lambda': 2.0202388370881565, 'max_depth': 10, 'min_split_gain': 0.3498412242537997}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:13:13,355][0m Trial 47 finished with value: 0.5496518434945543 and parameters: {'num_leaves': 64, 'learning_rate': 0.0101041451072813, 'feature_fraction': 0.8366773634581773, 'bagging_fraction': 0.4924091564276352, 'bagging_freq': 7, 'min_child_samples': 32, 'reg_alpha': 6.670237259084472, 'reg_lambda': 7.085305742266187, 'max_depth': 9, 'min_split_gain': 0.6809958392723253}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:13:52,954][0m Trial 48 finished with value: 0.5497043807367947 and parameters: {'num_leaves': 57, 'learning_rate': 0.013062843028798357, 'feature_fraction': 0.9229097985044419, 'bagging_fraction': 0.424510845518503, 'bagging_freq': 7, 'min_child_samples': 24, 'reg_alpha': 7.167729484977439, 'reg_lambda': 3.8858082238736302, 'max_depth': 7, 'min_split_gain': 0.35779848170927764}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:14:32,717][0m Trial 49 finished with value: 0.548748913222184 and parameters: {'num_leaves': 51, 'learning_rate': 0.016885367919297838, 'feature_fraction': 0.932338725573124, 'bagging_fraction': 0.4067345819667285, 'bagging_freq': 7, 'min_child_samples': 24, 'reg_alpha': 8.744773236543807, 'reg_lambda': 6.1875829567334195, 'max_depth': 7, 'min_split_gain': 0.3463890010928335}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:15:01,610][0m Trial 50 finished with value: 0.5455008335586855 and parameters: {'num_leaves': 55, 'learning_rate': 0.011117684112812479, 'feature_fraction': 0.8868902824598787, 'bagging_fraction': 0.4344773603580427, 'bagging_freq': 6, 'min_child_samples': 10, 'reg_alpha': 7.697893981169943, 'reg_lambda': 4.259580689379806, 'max_depth': 5, 'min_split_gain': 0.29265448892926427}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:15:47,220][0m Trial 51 finished with value: 0.5498285731496695 and parameters: {'num_leaves': 69, 'learning_rate': 0.013044318512314914, 'feature_fraction': 0.9974499713611734, 'bagging_fraction': 0.4719778435238311, 'bagging_freq': 8, 'min_child_samples': 17, 'reg_alpha': 6.93348297241454, 'reg_lambda': 3.626044355368319, 'max_depth': 8, 'min_split_gain': 0.4951642283681149}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:16:32,980][0m Trial 52 finished with value: 0.5484705177123378 and parameters: {'num_leaves': 58, 'learning_rate': 0.012706813830491276, 'feature_fraction': 0.959134879384116, 'bagging_fraction': 0.5411200455833802, 'bagging_freq': 7, 'min_child_samples': 16, 'reg_alpha': 7.16926875464339, 'reg_lambda': 3.8829066154219825, 'max_depth': 8, 'min_split_gain': 0.5110203285937789}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:17:16,283][0m Trial 53 finished with value: 0.5447102336363029 and parameters: {'num_leaves': 70, 'learning_rate': 0.021447606953875716, 'feature_fraction': 0.9864010197218178, 'bagging_fraction': 0.49810138513870683, 'bagging_freq': 9, 'min_child_samples': 18, 'reg_alpha': 6.900807547633691, 'reg_lambda': 2.973618644170882, 'max_depth': 7, 'min_split_gain': 0.3832700790525712}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:18:03,587][0m Trial 54 finished with value: 0.5501740429296875 and parameters: {'num_leaves': 85, 'learning_rate': 0.011158936139939788, 'feature_fraction': 0.8956665969161021, 'bagging_fraction': 0.4506370691666389, 'bagging_freq': 8, 'min_child_samples': 23, 'reg_alpha': 8.233083082710813, 'reg_lambda': 4.4113867919303145, 'max_depth': 10, 'min_split_gain': 0.46879275855289826}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:18:52,901][0m Trial 55 finished with value: 0.5494323043590699 and parameters: {'num_leaves': 83, 'learning_rate': 0.011425681582524742, 'feature_fraction': 0.8916527393397423, 'bagging_fraction': 0.517947829640397, 'bagging_freq': 8, 'min_child_samples': 12, 'reg_alpha': 8.21059600407838, 'reg_lambda': 4.365438788683115, 'max_depth': 10, 'min_split_gain': 0.47057910956533655}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:19:41,192][0m Trial 56 finished with value: 0.5439527504115226 and parameters: {'num_leaves': 89, 'learning_rate': 0.22217679470776866, 'feature_fraction': 0.9569724512434874, 'bagging_fraction': 0.5874760895278736, 'bagging_freq': 9, 'min_child_samples': 9, 'reg_alpha': 9.633254209750284, 'reg_lambda': 5.026083251862209, 'max_depth': 11, 'min_split_gain': 0.4365418354336322}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:20:33,867][0m Trial 57 finished with value: 0.5493221521469726 and parameters: {'num_leaves': 94, 'learning_rate': 0.019189885231462707, 'feature_fraction': 0.8326861662200034, 'bagging_fraction': 0.4815008654985051, 'bagging_freq': 9, 'min_child_samples': 19, 'reg_alpha': 6.3010857188063945, 'reg_lambda': 2.325494302725862, 'max_depth': 10, 'min_split_gain': 0.50115432385791}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:21:17,763][0m Trial 58 finished with value: 0.5467296050185816 and parameters: {'num_leaves': 87, 'learning_rate': 0.01645252146656423, 'feature_fraction': 0.734397048214368, 'bagging_fraction': 0.4509878511037281, 'bagging_freq': 7, 'min_child_samples': 84, 'reg_alpha': 8.652051121385794, 'reg_lambda': 7.636335719782109, 'max_depth': 9, 'min_split_gain': 0.5370045613918085}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:22:05,553][0m Trial 59 finished with value: 0.5487079650229942 and parameters: {'num_leaves': 81, 'learning_rate': 0.010131626337627361, 'feature_fraction': 0.7902105203306905, 'bagging_fraction': 0.6194525869462991, 'bagging_freq': 8, 'min_child_samples': 23, 'reg_alpha': 7.548518792280598, 'reg_lambda': 6.408279169329959, 'max_depth': 10, 'min_split_gain': 0.655919174164722}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:30:19,883][0m Trial 60 finished with value: 0.5457039506882099 and parameters: {'num_leaves': 73, 'learning_rate': 0.024139274814445746, 'feature_fraction': 0.9986276136586205, 'bagging_fraction': 0.5762095951726016, 'bagging_freq': 6, 'min_child_samples': 34, 'reg_alpha': 6.183358182069889, 'reg_lambda': 6.039340977372433, 'max_depth': 11, 'min_split_gain': 0.4002522882118807}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:30:53,834][0m Trial 61 finished with value: 0.5485744655336735 and parameters: {'num_leaves': 51, 'learning_rate': 0.013564461186944298, 'feature_fraction': 0.913096964289493, 'bagging_fraction': 0.424190994729495, 'bagging_freq': 7, 'min_child_samples': 22, 'reg_alpha': 6.943857678391307, 'reg_lambda': 4.580871475547053, 'max_depth': 6, 'min_split_gain': 0.3748863974256278}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:31:35,822][0m Trial 62 finished with value: 0.5502354325627776 and parameters: {'num_leaves': 64, 'learning_rate': 0.010941371889967785, 'feature_fraction': 0.8633742196872777, 'bagging_fraction': 0.40270176351680986, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 8.124885751219258, 'reg_lambda': 3.985081350417094, 'max_depth': 8, 'min_split_gain': 0.24068598823629428}. Best is trial 33 with value: 0.5505787673251442.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:32:17,042][0m Trial 63 finished with value: 0.5506038254891212 and parameters: {'num_leaves': 64, 'learning_rate': 0.011040726753521243, 'feature_fraction': 0.8627994604951843, 'bagging_fraction': 0.4030390981736208, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 9.486763454809228, 'reg_lambda': 5.10887698847921, 'max_depth': 8, 'min_split_gain': 0.3105923824678004}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:32:58,661][0m Trial 64 finished with value: 0.5502929831177517 and parameters: {'num_leaves': 64, 'learning_rate': 0.011162596540243985, 'feature_fraction': 0.8632626127134566, 'bagging_fraction': 0.40986530399271853, 'bagging_freq': 8, 'min_child_samples': 8, 'reg_alpha': 9.356472204355764, 'reg_lambda': 5.418343055424382, 'max_depth': 8, 'min_split_gain': 0.24770328980051076}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:33:40,758][0m Trial 65 finished with value: 0.5505722436617908 and parameters: {'num_leaves': 64, 'learning_rate': 0.011129592927925688, 'feature_fraction': 0.8689494027402208, 'bagging_fraction': 0.4469596148005397, 'bagging_freq': 8, 'min_child_samples': 5, 'reg_alpha': 9.965223473978373, 'reg_lambda': 5.28968820026827, 'max_depth': 8, 'min_split_gain': 0.2255673330762219}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:34:22,873][0m Trial 66 finished with value: 0.5495434161189946 and parameters: {'num_leaves': 64, 'learning_rate': 0.01104724787244744, 'feature_fraction': 0.8622532417511859, 'bagging_fraction': 0.4487969133241113, 'bagging_freq': 9, 'min_child_samples': 5, 'reg_alpha': 9.735562579963796, 'reg_lambda': 5.082911809515445, 'max_depth': 8, 'min_split_gain': 0.2656487409578721}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:34:55,969][0m Trial 67 finished with value: 0.5472961803960613 and parameters: {'num_leaves': 64, 'learning_rate': 0.011018493556159154, 'feature_fraction': 0.8268445386720337, 'bagging_fraction': 0.41654823688810855, 'bagging_freq': 8, 'min_child_samples': 7, 'reg_alpha': 9.203787394461061, 'reg_lambda': 5.615192601858714, 'max_depth': 6, 'min_split_gain': 0.21835271643295315}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:35:37,241][0m Trial 68 finished with value: 0.5495249960107607 and parameters: {'num_leaves': 46, 'learning_rate': 0.011199963172187456, 'feature_fraction': 0.887277777271746, 'bagging_fraction': 0.4414209989096955, 'bagging_freq': 9, 'min_child_samples': 14, 'reg_alpha': 9.960242751289565, 'reg_lambda': 5.404973768110721, 'max_depth': 8, 'min_split_gain': 0.17104271329952406}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:36:15,637][0m Trial 69 finished with value: 0.5451163289844636 and parameters: {'num_leaves': 60, 'learning_rate': 0.01546879787524108, 'feature_fraction': 0.8503743795034917, 'bagging_fraction': 0.4023473026229003, 'bagging_freq': 10, 'min_child_samples': 98, 'reg_alpha': 9.33997120358489, 'reg_lambda': 4.458659352666929, 'max_depth': 7, 'min_split_gain': 0.19235242584766454}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:36:46,545][0m Trial 70 finished with value: 0.5456029764610022 and parameters: {'num_leaves': 20, 'learning_rate': 0.0586988483130095, 'feature_fraction': 0.8732071872451905, 'bagging_fraction': 0.5045520281213304, 'bagging_freq': 8, 'min_child_samples': 8, 'reg_alpha': 8.914701525807441, 'reg_lambda': 4.914847159022423, 'max_depth': 8, 'min_split_gain': 0.25360434292954137}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:37:31,111][0m Trial 71 finished with value: 0.5501147722757457 and parameters: {'num_leaves': 73, 'learning_rate': 0.010017803381697958, 'feature_fraction': 0.8086788091429353, 'bagging_fraction': 0.45964248483249637, 'bagging_freq': 8, 'min_child_samples': 13, 'reg_alpha': 8.475996492387136, 'reg_lambda': 5.864213272765338, 'max_depth': 9, 'min_split_gain': 0.14054930132175097}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:38:19,480][0m Trial 72 finished with value: 0.5486337963598915 and parameters: {'num_leaves': 75, 'learning_rate': 0.019804504733760175, 'feature_fraction': 0.8437347169907418, 'bagging_fraction': 0.4295363573423797, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 9.577030410227767, 'reg_lambda': 4.1389924206911015, 'max_depth': 9, 'min_split_gain': 0.3081737767318721}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:39:01,958][0m Trial 73 finished with value: 0.5488940423144919 and parameters: {'num_leaves': 65, 'learning_rate': 0.014498885390518718, 'feature_fraction': 0.7863249784971442, 'bagging_fraction': 0.4785400388770647, 'bagging_freq': 8, 'min_child_samples': 5, 'reg_alpha': 9.323514062128087, 'reg_lambda': 5.203268236234816, 'max_depth': 8, 'min_split_gain': 0.9911280929114685}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:39:49,588][0m Trial 74 finished with value: 0.5492280964741517 and parameters: {'num_leaves': 62, 'learning_rate': 0.012097759244698168, 'feature_fraction': 0.8625442783981387, 'bagging_fraction': 0.451175291049823, 'bagging_freq': 7, 'min_child_samples': 20, 'reg_alpha': 8.197497846370807, 'reg_lambda': 5.544282523261851, 'max_depth': 10, 'min_split_gain': 0.30737316798012243}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:40:26,741][0m Trial 75 finished with value: 0.548976392381115 and parameters: {'num_leaves': 32, 'learning_rate': 0.029536355388216157, 'feature_fraction': 0.7446364854357801, 'bagging_fraction': 0.41788773641780763, 'bagging_freq': 6, 'min_child_samples': 17, 'reg_alpha': 8.917982957165124, 'reg_lambda': 3.0301230810549047, 'max_depth': 7, 'min_split_gain': 0.22913917566602987}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:41:15,069][0m Trial 76 finished with value: 0.5470933828606755 and parameters: {'num_leaves': 71, 'learning_rate': 0.01381398048255521, 'feature_fraction': 0.8186709234780577, 'bagging_fraction': 0.5335343869934586, 'bagging_freq': 8, 'min_child_samples': 11, 'reg_alpha': 9.992494476343232, 'reg_lambda': 6.935265390112706, 'max_depth': 9, 'min_split_gain': 0.5652102168476365}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 18:56:51,115][0m Trial 77 finished with value: 0.5479751262584961 and parameters: {'num_leaves': 86, 'learning_rate': 0.016593265743704125, 'feature_fraction': 0.8989300238568187, 'bagging_fraction': 0.5118640224288802, 'bagging_freq': 5, 'min_child_samples': 8, 'reg_alpha': 0.6743080732647746, 'reg_lambda': 4.858863329202306, 'max_depth': 8, 'min_split_gain': 0.2088545526174087}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:11:14,111][0m Trial 78 finished with value: 0.5470510003080218 and parameters: {'num_leaves': 79, 'learning_rate': 0.018665822693917977, 'feature_fraction': 0.8079276595515102, 'bagging_fraction': 0.46535678294008487, 'bagging_freq': 9, 'min_child_samples': 60, 'reg_alpha': 4.37251052936645, 'reg_lambda': 5.9503266850894425, 'max_depth': 9, 'min_split_gain': 0.12474210615075365}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:12:00,483][0m Trial 79 finished with value: 0.5501734342322823 and parameters: {'num_leaves': 84, 'learning_rate': 0.011004306820406281, 'feature_fraction': 0.7787968027944167, 'bagging_fraction': 0.4208241750508541, 'bagging_freq': 9, 'min_child_samples': 14, 'reg_alpha': 8.028483641002454, 'reg_lambda': 3.7060436842811812, 'max_depth': 10, 'min_split_gain': 0.05707876594583661}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:12:47,466][0m Trial 80 finished with value: 0.5493196080302337 and parameters: {'num_leaves': 84, 'learning_rate': 0.010801096281097692, 'feature_fraction': 0.748437201846388, 'bagging_fraction': 0.400593957145836, 'bagging_freq': 10, 'min_child_samples': 21, 'reg_alpha': 8.107960906605744, 'reg_lambda': 3.6085970021885823, 'max_depth': 15, 'min_split_gain': 0.036625540439970766}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:13:36,218][0m Trial 81 finished with value: 0.5502840110428082 and parameters: {'num_leaves': 76, 'learning_rate': 0.011775093178510367, 'feature_fraction': 0.8755770189677813, 'bagging_fraction': 0.4203956915470292, 'bagging_freq': 9, 'min_child_samples': 14, 'reg_alpha': 8.522321351235066, 'reg_lambda': 3.127261049806952, 'max_depth': 10, 'min_split_gain': 0.04071302477687583}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:14:26,429][0m Trial 82 finished with value: 0.5498844270378643 and parameters: {'num_leaves': 92, 'learning_rate': 0.011676221126849034, 'feature_fraction': 0.8802257374342085, 'bagging_fraction': 0.4282623282986451, 'bagging_freq': 9, 'min_child_samples': 15, 'reg_alpha': 8.49085518602247, 'reg_lambda': 3.074882968412181, 'max_depth': 11, 'min_split_gain': 0.056801711804404895}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:15:11,608][0m Trial 83 finished with value: 0.5498624756095294 and parameters: {'num_leaves': 58, 'learning_rate': 0.013323892773946248, 'feature_fraction': 0.7060512424502223, 'bagging_fraction': 0.41326789061665264, 'bagging_freq': 10, 'min_child_samples': 11, 'reg_alpha': 9.411971857424696, 'reg_lambda': 3.7257589787287992, 'max_depth': 10, 'min_split_gain': 0.10831340255454094}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:16:00,988][0m Trial 84 finished with value: 0.5497214048577661 and parameters: {'num_leaves': 66, 'learning_rate': 0.011870147177479527, 'feature_fraction': 0.9436357819259524, 'bagging_fraction': 0.44071045019395483, 'bagging_freq': 9, 'min_child_samples': 18, 'reg_alpha': 7.972419722318487, 'reg_lambda': 4.0458771586309, 'max_depth': 10, 'min_split_gain': 0.03538324430033901}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:16:49,167][0m Trial 85 finished with value: 0.5495565922142199 and parameters: {'num_leaves': 76, 'learning_rate': 0.015437454613876501, 'feature_fraction': 0.7774117939815902, 'bagging_fraction': 0.4550867490323673, 'bagging_freq': 9, 'min_child_samples': 70, 'reg_alpha': 8.920546956025962, 'reg_lambda': 3.1830226254990235, 'max_depth': 11, 'min_split_gain': 0.003968000398321923}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:17:32,338][0m Trial 86 finished with value: 0.5498387192080179 and parameters: {'num_leaves': 62, 'learning_rate': 0.010051109633065651, 'feature_fraction': 0.857302197470074, 'bagging_fraction': 0.48666631314672243, 'bagging_freq': 8, 'min_child_samples': 7, 'reg_alpha': 8.679012704208471, 'reg_lambda': 2.516452898917848, 'max_depth': 8, 'min_split_gain': 0.16200542487207104}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:18:20,611][0m Trial 87 finished with value: 0.5484376971295368 and parameters: {'num_leaves': 70, 'learning_rate': 0.013956462681446659, 'feature_fraction': 0.9054522085134301, 'bagging_fraction': 0.41827940976899014, 'bagging_freq': 8, 'min_child_samples': 27, 'reg_alpha': 9.058186777467167, 'reg_lambda': 4.620119823149199, 'max_depth': 10, 'min_split_gain': 0.07870360895345968}. Best is trial 63 with value: 0.5506038254891212.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:19:05,399][0m Trial 88 finished with value: 0.550605822429813 and parameters: {'num_leaves': 79, 'learning_rate': 0.010802068701021229, 'feature_fraction': 0.8435256872701616, 'bagging_fraction': 0.4339065964078601, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 7.78719739073039, 'reg_lambda': 4.343768156500813, 'max_depth': 9, 'min_split_gain': 0.25441549997279617}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:19:56,910][0m Trial 89 finished with value: 0.5482461606413871 and parameters: {'num_leaves': 79, 'learning_rate': 0.012305305357787191, 'feature_fraction': 0.8416602485019405, 'bagging_fraction': 0.8854544732866246, 'bagging_freq': 8, 'min_child_samples': 9, 'reg_alpha': 9.768204816922825, 'reg_lambda': 5.115758235773562, 'max_depth': 9, 'min_split_gain': 0.27128951669125023}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:20:42,273][0m Trial 90 finished with value: 0.5496569431028357 and parameters: {'num_leaves': 68, 'learning_rate': 0.015615505694151776, 'feature_fraction': 0.875029338590314, 'bagging_fraction': 0.44096639141837213, 'bagging_freq': 7, 'min_child_samples': 17, 'reg_alpha': 7.640003269321872, 'reg_lambda': 4.28185962874104, 'max_depth': 8, 'min_split_gain': 0.32292533864799405}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:21:31,404][0m Trial 91 finished with value: 0.5493889721573776 and parameters: {'num_leaves': 84, 'learning_rate': 0.010958719337033468, 'feature_fraction': 0.8244335567879122, 'bagging_fraction': 0.40011391308694866, 'bagging_freq': 9, 'min_child_samples': 46, 'reg_alpha': 7.89425485145798, 'reg_lambda': 3.351518773519755, 'max_depth': 10, 'min_split_gain': 0.23172196059098732}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:37:17,444][0m Trial 92 finished with value: 0.550376692702934 and parameters: {'num_leaves': 81, 'learning_rate': 0.010604617392460979, 'feature_fraction': 0.8465905967368925, 'bagging_fraction': 0.4308817307199356, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 8.325748516904909, 'reg_lambda': 3.708206005511766, 'max_depth': 9, 'min_split_gain': 0.10994053460924263}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:45:36,261][0m Trial 93 finished with value: 0.548755933439183 and parameters: {'num_leaves': 74, 'learning_rate': 0.012949459355797435, 'feature_fraction': 0.8545257860164199, 'bagging_fraction': 0.4667450266063101, 'bagging_freq': 8, 'min_child_samples': 12, 'reg_alpha': 8.30899983155068, 'reg_lambda': 4.401286083769889, 'max_depth': 9, 'min_split_gain': 0.2066381691664222}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:46:17,588][0m Trial 94 finished with value: 0.549148416885259 and parameters: {'num_leaves': 81, 'learning_rate': 0.0105256394879698, 'feature_fraction': 0.8944662603673086, 'bagging_fraction': 0.4362967023104974, 'bagging_freq': 8, 'min_child_samples': 5, 'reg_alpha': 9.45360022725365, 'reg_lambda': 3.9027736509072524, 'max_depth': 8, 'min_split_gain': 0.282501736644318}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:46:56,803][0m Trial 95 finished with value: 0.5478537980862992 and parameters: {'num_leaves': 78, 'learning_rate': 0.011928469594737154, 'feature_fraction': 0.9269934297274179, 'bagging_fraction': 0.4912281791403941, 'bagging_freq': 8, 'min_child_samples': 22, 'reg_alpha': 8.487756913267484, 'reg_lambda': 4.649467049744705, 'max_depth': 7, 'min_split_gain': 0.2539576036150558}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:47:43,388][0m Trial 96 finished with value: 0.549533025721354 and parameters: {'num_leaves': 88, 'learning_rate': 0.014457615529047762, 'feature_fraction': 0.8177287297778933, 'bagging_fraction': 0.45743251563836695, 'bagging_freq': 7, 'min_child_samples': 25, 'reg_alpha': 9.158235850283527, 'reg_lambda': 4.129749674005976, 'max_depth': 9, 'min_split_gain': 0.18897502588657153}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:48:35,680][0m Trial 97 finished with value: 0.5498389030855945 and parameters: {'num_leaves': 70, 'learning_rate': 0.01000329980287117, 'feature_fraction': 0.8354931275143725, 'bagging_fraction': 0.4750172922035239, 'bagging_freq': 8, 'min_child_samples': 19, 'reg_alpha': 4.817560974004561, 'reg_lambda': 2.872864048925826, 'max_depth': 14, 'min_split_gain': 0.12171031655279543}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:49:21,971][0m Trial 98 finished with value: 0.550242794142551 and parameters: {'num_leaves': 72, 'learning_rate': 0.012874150061624155, 'feature_fraction': 0.8756614627925379, 'bagging_fraction': 0.4288634222867261, 'bagging_freq': 7, 'min_child_samples': 10, 'reg_alpha': 8.880138383456451, 'reg_lambda': 4.839855291745838, 'max_depth': 9, 'min_split_gain': 0.41790323533497564}. Best is trial 88 with value: 0.550605822429813.[0m
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+Training until validation scores don't improve for 50 rounds
+[32m[I 2025-09-27 19:50:07,244][0m Trial 99 finished with value: 0.5505311820491531 and parameters: {'num_leaves': 53, 'learning_rate': 0.013200284360125939, 'feature_fraction': 0.8748047902768652, 'bagging_fraction': 0.41367869898247106, 'bagging_freq': 7, 'min_child_samples': 10, 'reg_alpha': 8.740580144873102, 'reg_lambda': 5.420251437398546, 'max_depth': 9, 'min_split_gain': 0.43387934910643255}. Best is trial 88 with value: 0.550605822429813.[0m
+
+Optuna optimization completed!
+Best F2-score: 0.5506
+Best parameters: {'num_leaves': 79, 'learning_rate': 0.010802068701021229, 'feature_fraction': 0.8435256872701616, 'bagging_fraction': 0.4339065964078601, 'bagging_freq': 8, 'min_child_samples': 14, 'reg_alpha': 7.78719739073039, 'reg_lambda': 4.343768156500813, 'max_depth': 9, 'min_split_gain': 0.25441549997279617}
+
+Performing 5-fold cross-validation with cost-sensitive learning...
+Using scale_pos_weight = 154.98 (base ratio: 15.5:1, cost ratio: 10:1)
+Training until validation scores don't improve for 50 rounds
+Fold 1 - AUC: 0.9605, F2: 0.5385
+Training until validation scores don't improve for 50 rounds
+Fold 2 - AUC: 0.9598, F2: 0.5499
+Training until validation scores don't improve for 50 rounds
+Fold 3 - AUC: 0.9617, F2: 0.5474
+Training until validation scores don't improve for 50 rounds
+Fold 4 - AUC: 0.9623, F2: 0.5389
+Training until validation scores don't improve for 50 rounds
+Fold 5 - AUC: 0.9609, F2: 0.5496
+
+Cross-validation results:
+Mean AUC: 0.9610 (+/- 0.0018)
+Mean F2-score: 0.5449 (+/- 0.0102)
+Individual AUC scores: ['0.9605', '0.9598', '0.9617', '0.9623', '0.9609']
+Individual F2 scores: ['0.5385', '0.5499', '0.5474', '0.5389', '0.5496']
+Splitting data into train/test sets...
+Training set: 472819 samples
+Test set: 118205 samples
+Death rate in training set: 0.0606
+Death rate in test set: 0.0606
+Cost-sensitive learning: scale_pos_weight = 154.99
+Base class ratio (No Death:Death) = 15.5:1
+With cost ratio 10:1, effective weight = 155.0x higher for Death class
+Using Optuna-optimized parameters with cost-sensitive weights...
+Training LightGBM model...
+[100]	training's l2: 0.0359568
+[200]	training's l2: 0.033339
+[300]	training's l2: 0.0329707
+[400]	training's l2: 0.0329128
+[500]	training's l2: 0.0328997
+[600]	training's l2: 0.0328972
+[700]	training's l2: 0.0328972
+[800]	training's l2: 0.0328972
+[900]	training's l2: 0.0328972
+[1000]	training's l2: 0.0328972
+
+============================================================
+MODEL EVALUATION - COST-SENSITIVE LEARNING
+============================================================
+Class Distribution in Test Set:
+  No Death: 93.94% (111,040 samples)
+  Death: 6.06% (7,165 samples)
+  Class Imbalance Ratio: 15.5:1 (No Death:Death)
+
+📊 COMPREHENSIVE METRICS:
+AUC-ROC: 0.9605 (traditional metric)
+PR-AUC: 0.5986 (better for imbalanced data)
+Balanced Accuracy: 0.7218 (accounts for class imbalance)
+F1-score: 0.5336 (balanced precision/recall)
+F2-score: 0.4874 ⭐ (emphasizes recall - our target metric)
+F0.5-score: 0.5894 (emphasizes precision)
+
+📋 CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+    No Death       0.97      0.98      0.97    111040
+       Death       0.63      0.46      0.53      7165
+
+    accuracy                           0.95    118205
+   macro avg       0.80      0.72      0.75    118205
+weighted avg       0.95      0.95      0.95    118205
+
+
+Confusion Matrix:
+True Negatives: 109,130
+False Positives: 1,910
+False Negatives: 3,863
+True Positives: 3,302
+
+Feature Importance:
+                                              feature  importance
+0                                         age_numeric        1755
+3                                       hosp_icu_risk         732
+5                                          sex_Female         474
+14                            race_White_Non_Hispanic         367
+4                                   age_group_encoded         281
+6                                            sex_Male         206
+15                                           hosp_yes         205
+12                   race_Multiple_Other_Non_Hispanic         203
+10                            race_Black_Non_Hispanic         188
+17                                            icu_yes         132
+2                                  very_high_risk_age         115
+1                                       high_risk_age          92
+11                               race_Hispanic_Latino          80
+13  race_Native_Hawaiian_Other_Pacific_Islander_No...          50
+16                                       hosp_unknown           0
+9                             race_Asian_Non_Hispanic           0
+8     race_American_Indian_Alaska_Native_Non_Hispanic           0
+7                                           sex_Other           0
+18                                        icu_unknown           0
+Saving plots to 'plots_20250927_171505' directory...
+All plots saved successfully in 'plots_20250927_171505' directory!
+
+Model saved as 'covid_death_prediction_model_20250927_171505.txt'
+Feature importance saved as 'feature_importance_20250927_171505.csv'
+Best parameters saved as 'best_parameters_20250927_171505.json'
+
+======================================================================
+MODEL TRAINING COMPLETED SUCCESSFULLY!
+Training completed at: 2025-09-27 19:50:52
+All outputs saved with timestamp: 20250927_171505
+======================================================================
